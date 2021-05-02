@@ -1,1 +1,1 @@
-Sitemap: https://abhimanyutalwar.com/paper-notes/sitemap.xml
+Sitemap: https://talwarabhimanyu.github.io/paper-notes-v1/sitemap.xml
