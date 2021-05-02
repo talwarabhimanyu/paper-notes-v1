@@ -152,9 +152,7 @@ window.onload = wrap_img;
 </h2>
 <p>After applying the transformation $f$ (assume it is invertible, and assume $m=n$), the distribution of the original random variable can be written as (see Appendix 1 for proof):
 $$
-\begin{align}
-p_X(x) &amp;= p_H\left(f(x)\right)det(J) 
-\end{align}
+p_X(x) = p_H\left(f(x)\right)det(J) 
 $$</p>
 <p>Now say we observe $N$ samples of $X$, then we estimate the transformation $f$ (a parametrized neural network) by maximizing the log-likelihood of these samples (while assuming some prior distribution $p_H$). The log-likelihood can be written as:</p>
 $$
@@ -180,18 +178,14 @@ $$<p>The authors observe that a good transformation should be able to capture a 
 </h3>
 <p>If $x \in \mathbb{R}^D$, then we define $y \in \mathbb{R}^D$ such that the first $d$ components of $y$ are the same as that of $x$, and the other $D-d$ components are determined by a function $g: \mathbb{R}^{D-d} \times m\left(\mathbb{R}^{d}\right) \to \mathbb{R}^{D-d}$ called the "Coupling Law":</p>
 $$
-\begin{align}
-y_{1\cdots d} &amp;= x_{1\cdots d} \\
-y_{d+1\cdots D} &amp;= g\left(x_{1\cdots d}, m\left(x_{d+1\cdots D}\right)\right)
-\end{align}
+y_{1\cdots d} = x_{1\cdots d} \\
+y_{d+1\cdots D} = g\left(x_{1\cdots d}, m\left(x_{d+1\cdots D}\right)\right)
 $$<p>We see (from the way we defined this transformation above) that the Jacobian for this transformation of $x$ into $y$ is triangular:</p>
 $$
-\begin{align}
-\frac{\partial y}{\partial x} &amp;= \begin{bmatrix}
+\frac{\partial y}{\partial x} = \begin{bmatrix}
 I_d &amp; 0 \\
 \frac{\partial y_{d+1\cdots D}}{\partial x_{1\cdots d}} &amp; \frac{\partial y_{d+1\cdots D}}{\partial x_{d+1\cdots D}}
 \end{bmatrix}
-\end{align}
 $$
 </div>
 </div>
