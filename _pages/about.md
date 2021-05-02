@@ -4,8 +4,4 @@ title: About Me
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+Hi! I am Abhimanyu and you can find more about me [here](https://www.abhimanyutalwar.com). I love reading papers and taking notes, and I created this blog to save my notes for future reference. I hope someone else may find them useful too.
