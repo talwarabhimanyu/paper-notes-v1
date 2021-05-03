@@ -154,17 +154,15 @@ window.onload = wrap_img;
 <p>If there are $N$ vertices in the graph, and each is connected to an average of $z$ edges, then it is trivial to show that $p=z/(N-1)$.</p>
 </blockquote>
 <p><code>Here is my short proof for this statement.</code></p>
-<p>Let $E$ be the set of edges. We can say:$$\begin{align}
-&amp; \mathbb{E}[|E|] = \frac{zN}{2} \\
-\implies &amp; \frac{1}{2}\sum_{i=1}^Np(N-1) = \frac{zN}{2} \\
-\implies &amp; p = \frac{z}{N-1} \\
-\implies &amp; p  \sim \frac{z}{N} \tag{for large $N$ (Eq. 1)}
-\end{align}
+<p>Let $E$ be the set of edges. We can say:$$\mathbb{E}[|E|] = \frac{zN}{2} \\
+\implies \frac{1}{2}\sum_{i=1}^Np(N-1) = \frac{zN}{2} \\
+\implies p = \frac{z}{N-1} \\
+\implies p  \sim \frac{z}{N} \tag{for large $N$ (Eq. 1)}
 $$</p>
 <p>Given the independence assumption, the distribution of degree of a vertex, $p_k$, is thus Binomial, <a href="https://en.wikipedia.org/wiki/Poisson_limit_theorem">which for large $N$</a> can be approximated by a Poisson distribution.</p>
-\begin{align}
-p_k &amp;= {N\choose k}p^k(1-p)^{N-k} \sim \frac{z^ke^{-z}}{k!} \tag{Eq. 2}
-\end{align}
+$$
+p_k = {N\choose k}p^k(1-p)^{N-k} \sim \frac{z^ke^{-z}}{k!} \tag{Eq. 2}
+$$
 </div>
 </div>
 </div>
@@ -177,21 +175,17 @@ p_k &amp;= {N\choose k}p^k(1-p)^{N-k} \sim \frac{z^ke^{-z}}{k!} \tag{Eq. 2}
 <p>The authors express the probability distribution of a discrete random variables (e.g. degree of a vertex) as what is called a Generating Function<sup id="fnref-2" class="footnote-ref"><a href="#fn-2">2</a></sup>. They then exploit properties of Generating Functions to derive some interesting insights, e.g. finding the distribution of sums of random variables.</p>
 <p>A sequence of numbers can be encapsulated into a function (the Generating Function), with the property that when that function is expressed as the sum of a power series ($a_0 + a_1x + a_2x^2 + \cdots$), the coefficients of this series ($a_0,a_1,a_2,\cdots$) give us the original number sequence<sup id="fnref-2" class="footnote-ref"><a href="#fn-2">2</a></sup>. E.g. For a graph with Poisson distributed vertex degree, $p_k$ (the probability a vertex has degree $k$) is a sequence whose Generating Function can be written as:
 $$
-\begin{align}
-G_0(x) &amp;= \sum_{k=0}^N{N\choose k}p^k(1-p)^{N-k}x^k \\
-&amp;= (1-p+px)^N \\
-&amp;\sim e^{z(x-1)} \tag{for $N\to\infty$ (Eq. 3)}
-\end{align}
+G_0(x) = \sum_{k=0}^N{N\choose k}p^k(1-p)^{N-k}x^k \\
+= (1-p+px)^N \\
+\sim e^{z(x-1)} \tag{for $N\to\infty$ (Eq. 3)}
 $$
 Several properties of the Generating Function $G_0(x) = \sum_{k=0}^Np_kx^k$ come handy.</p>
 <ul>
 <li>
 <p><strong>Moments</strong>: The average degree can be written as:
 $$
-\begin{align}
-z &amp;= \sum_kkp_k \\
-&amp;= G'_0(1) \tag{First Moment (Eq. 4)}
-\end{align}
+z = \sum_kkp_k \\
+= G'_0(1) \tag{First Moment (Eq. 4)}
 $$
 For the case of Poisson distributed vertex degree, we have $G'_0(1) = z$.</p>
 </li>
